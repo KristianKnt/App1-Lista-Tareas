@@ -37,12 +37,31 @@ class ListaTareas {
 
     }
 
-    agregarTarea() {
+    agregarTarea(tarea) {
+        let padre = document.getElementById('recordatorio').parentElement;
+        if(tarea !== ''){
+            padre.classList.remove('has-error');            
+            let nuevaTarea={
+                tarea,
+                completado:false
+            };
+            this.tareas.push(nuevaTarea);
+            this.cargarTareas();
+        }else{
+            padre.classList.add('has-error');
+        }
+        
+
 
     }
 
     agregarTareaClick() {
-
+        let recordatorio = document.getElementById('recordatorio');
+        let tarea = recordatorio.value;
+        if(tarea){
+            this.agregarTarea(tarea);
+            recordatorio.value='';
+        }
     }
 
 
