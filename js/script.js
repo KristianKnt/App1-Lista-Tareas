@@ -26,7 +26,7 @@ class ListaTareas {
 
     agregarEventListeners() {
         document.getElementById('recordatorio').addEventListener('keypress', (evento) => {
-            if (evento.keyCode == 13) {
+            if(evento.keyCode == 13){
                 this.agregarTarea(evento.target.value);
                 evento.target.value = '';
             }
@@ -35,13 +35,13 @@ class ListaTareas {
 
 
     cargarTareas() {
-        localStorage.setItem('tareas',JSON.stringify(this.tareas));
-        let htmlTareas = this.tareas.reduce((html,tarea,indice)=> html += this.generarHtmlTarea(tarea,indice),'');
-        document.getElementById('listaTareas').innerHTML = htmlTareas; 
+        localStorage.setItem('tareas', JSON.stringify(this.tareas));
+        let htmlTareas = this.tareas.reduce((html, tarea, indice) => html += this.generarHtmlTarea(tarea, indice), '');
+        document.getElementById('listaTareas').innerHTML = htmlTareas;
     }
 
 
-    cambiarEstadoTarea(indice){
+    cambiarEstadoTarea(indice) {
         this.tareas[indice].completado = !this.tareas[indice].completado;
         this.cargarTareas();
     }
@@ -80,6 +80,7 @@ class ListaTareas {
 
     agregarTarea(tarea) {
         let padre = document.getElementById('recordatorio').parentElement;
+        
         if(tarea !== ''){
             padre.classList.remove('has-error');            
             let nuevaTarea={

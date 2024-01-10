@@ -27,10 +27,11 @@ body{
 }
 
 .icono-eliminacion{
-    color:red;
+    color: red;
 }
 
 .tarea-completada{
     text-decoration: line-through;
+        color: blue;
 }
 
