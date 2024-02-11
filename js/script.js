@@ -1,7 +1,7 @@
 class ListaTareas{
     constructor(){
         this.tareas = JSON.parse(localStorage.getItem('tareas'));
-
+        // if tareas is empy for default create three "tareas"
         if (!this.tareas) {
             this.tareas = [
                 {tarea: 'Aprender JavaScript', completado: false},
@@ -13,7 +13,7 @@ class ListaTareas{
         this.cargarTareas();
         this.agregarEventListeners();
     }
-
+    // function for create new events or tareas!
     agregarEventListeners() {
         document.getElementById('recordatorio').addEventListener('keypress', (evento) => {
             if(evento.keyCode == 13){

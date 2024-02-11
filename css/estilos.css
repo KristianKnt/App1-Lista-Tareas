@@ -1,9 +1,9 @@
 body{
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 .area-contenido{
-    padding: 40px 15px;
+    padding: 45px 15px;
 }
 
 .area-entrada{
@@ -32,7 +32,7 @@ body{
 
 .tarea-completada{
     text-decoration: line-through;
-        color: blue;
+        color: green;
 }
 
 .caja-comprobacion{
