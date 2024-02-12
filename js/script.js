@@ -32,12 +32,13 @@ class ListaTareas{
     cambiarEstadoTarea(indice) {
         this.tareas[indice].completado = !this.tareas[indice].completado;
         this.cargarTareas();
+
     }
 
     eliminarTarea(evento, indice) {
-        evento.preventDefault();
-        this.tareas.splice(indice, 1);
-        this.cargarTareas();
+        evento.preventDefault();// evita que se transite a otra pagina?
+        this.tareas.splice(indice, 1);//elimina o remueve el contenido de un arreglo 
+        this.cargarTareas();// se llama el metodo para que se recarge.
     }
 
     generarHtmlTarea(tarea, indice) {
@@ -81,7 +82,10 @@ class ListaTareas{
             padre.classList.add('has-error');
         }
     }
-
+    /**
+     * metodo para tomar el valor del recuado y el llamado del metodo agregarTarea validanddse
+     * por el if si no esta vacio llama al metodo
+     */
     agregarTareaClick() {
         let recordatorio = document.getElementById('recordatorio');
         let tarea = recordatorio.value;
@@ -91,7 +95,7 @@ class ListaTareas{
         }
     }
 }
-
+// create variable called listaTareas for save instances "ListaTareas"
 let listaTareas;
 
 window.addEventListener('load', () => {
